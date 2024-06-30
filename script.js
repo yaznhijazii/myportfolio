@@ -16,6 +16,23 @@ mobileMenuToggle.addEventListener('click', function() {
     // Optional: Hide desktop navigation links when mobile menu is open
     navLinks.style.display = navLinks.style.display === 'none' ? 'flex' : 'none';
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+
+    mobileMenuToggle.addEventListener('click', function() {
+        this.classList.toggle('open');
+        mobileMenuOverlay.classList.toggle('open');
+        document.body.classList.toggle('overflow-hidden'); // Optional to prevent scrolling
+    });
+
+    mobileMenuOverlay.addEventListener('click', function() {
+        mobileMenuToggle.classList.remove('open');
+        this.classList.remove('open');
+        document.body.classList.remove('overflow-hidden'); // Optional to prevent scrolling
+    });
+});
+
 
 
 
