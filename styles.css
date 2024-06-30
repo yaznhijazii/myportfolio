@@ -78,10 +78,17 @@ body {
     font-family: 'Roboto Slab', serif;
     font-size: 3rem;
     margin-bottom: 20px;
-    white-space: nowrap;
-    overflow: hidden;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflow text */
     border-right: 0.15em solid #6B8E82; /* Cursor */
     animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
 }
 
 .intro-photo {
@@ -271,8 +278,8 @@ body {
 
 .form-control {
     width: 100%;
-    padding: 10px;
-    font-size: 1rem;
+    padding: 8px;
+    font-size: 0.9rem;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -304,15 +311,29 @@ textarea {
     position: relative;
     margin-top: 50px;
 }
-
 @media (max-width: 768px) {
     .navbar .container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
     }
 
     .nav-links {
         margin-top: 20px;
+        text-align: center; /* Center links */
+    }
+
+    .navbar-brand {
+        margin-bottom: 10px; /* Adjust spacing */
+        font-size: 1.2rem; /* Optionally, reduce font size for smaller screens */
+    }
+
+    .nav-links li {
+        margin-right: 0; /* Remove right margin between nav items */
+        margin-bottom: 10px; /* Add bottom margin for each nav item */
+    }
+
+    .nav-links a {
+        font-size: 1rem; /* Optionally adjust font size for smaller screens */
     }
 }
 
