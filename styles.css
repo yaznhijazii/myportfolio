@@ -1,0 +1,346 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Custom Font for Arabic Text */
+@font-face {
+    font-family: 'iwan';
+    src: url('iwan.otf') format('opentype');
+}
+
+/* Navbar */
+.navbar {
+    background-color: #6E6B7C;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-family: 'iwan', serif;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #D2D2D2;
+    color: #333;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid #6B8E82; /* Cursor */
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.intro-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.animated-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #555;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #555; }
+}
+
+/* Sections */
+.section {
+    padding: 80px 0;
+}
+
+.section h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.section-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    perspective: 1000px;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-front, .skill-back {
+    backface-visibility: hidden;
+}
+
+.skill-front {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.skill-back {
+    display: none;
+    font-size: 1rem;
+    text-align: center;
+    color: #555;
+}
+
+.skill-card.flipped .skill-front {
+    transform: rotateY(180deg);
+    display: none;
+}
+
+.skill-card.flipped .skill-back {
+    display: block;
+    transform: rotateY(0deg);
+}
+
+/* Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.project-info {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Certifications */
+.certifications-carousel {
+    display: flex;
+    overflow: hidden;
+    gap: 20px; /* Adjust as needed */
+    padding-top: 20px;
+}
+
+.certification-item {
+    width: 300px; /* Adjust width as needed */
+    height: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideLeftRight 20s linear infinite;
+}
+
+.certification-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+@keyframes slideLeftRight {
+    0% {
+        transform: translateX(0%);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    75% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.certification-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #555;
+}
+
+/* Footer */
+.footer {
+    background-color: #6E6B7C;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        margin-top: 20px;
+    }
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adjust as needed */
+    padding-top: 20px;
+}
+
+.social-icons a {
+    display: block;
+    width: 50px; /* Adjust icon size as needed */
+    height: 50px;
+    border-radius: 50%; /* Makes icons circular */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
