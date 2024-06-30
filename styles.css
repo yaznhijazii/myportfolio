@@ -25,7 +25,6 @@ body {
 }
 
 /* Navbar */
-/* Navbar */
 .navbar {
     background-color: #6E6B7C;
     color: #fff;
@@ -390,32 +389,6 @@ textarea {
     position: relative;
     margin-top: 50px;
 }
-@media (max-width: 768px) {
-    .navbar .container {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-    }
-
-    .nav-links {
-        margin-top: 20px;
-        text-align: center; /* Center links */
-    }
-
-    .navbar-brand {
-        margin-bottom: 10px; /* Adjust spacing */
-        font-size: 1.2rem; /* Optionally, reduce font size for smaller screens */
-    }
-
-    .nav-links li {
-        margin-right: 0; /* Remove right margin between nav items */
-        margin-bottom: 10px; /* Add bottom margin for each nav item */
-    }
-
-    .nav-links a {
-        font-size: 1rem; /* Optionally adjust font size for smaller screens */
-    }
-}
-
 /* Social Media Icons */
 .social-icons {
     display: flex;

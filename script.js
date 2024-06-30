@@ -12,6 +12,7 @@ mobileMenuToggle.addEventListener('click', function() {
     mobileMenuOverlay.classList.toggle('open');
 });
 
+
 // Flip Skills Cards
 const skillCards = document.querySelectorAll('.skill-card');
 
